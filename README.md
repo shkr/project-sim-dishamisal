@@ -15,28 +15,26 @@ Here is the data set: [wikipedia_diseases.zip](http://challenge.20n.com/machine-
 2.  Exclude broad articles that talk about generic classes of diseases, e.g. [genetic disorders](https://en.wikipedia.org/wiki/Genetic_disorder), [infection](https://en.wikipedia.org/wiki/Infection), [bacteria](https://en.wikipedia.org/wiki/Bacteria), [virus](https://en.wikipedia.org/wiki/Virus), [mutation](https://en.wikipedia.org/wiki/Mutation). Fun: when you exclude these, what does your classifier do for [cancer](https://en.wikipedia.org/wiki/Cancer)?
 
 
-## FAQs
+## Solution
 
-**How long will this take?**  
-That is yours to commit. Just get back within 7 days from the time this repository is shared with you.
+**Components:**
+- *HTML Parsing*: Parse through the wikipedia article for sentences.
+- *Baseline model*: Logistic Regression Classifier
+- *DNN model*: Sequential model from Keras is used for both Part-A and Part-B (separate models for the same)
 
-**What language should I use?**  
-Whatever you want. 
 
-**Can I use X?**  
-Unless the tool directly answers the question "are these disease articles?". You can use whatever you want. 
+## Instructions to run
 
-**How should I solve it?**
-There are many solutions to non-convex problems. We are seeking a deep learning engineer, so deep learning models are preferrable. 
+> Runner module is created and DNN model is pre-trained with a small subset of training data (in absense of adequate compute).
 
-Through this we want to understand the core skills and methods you are developing as a problem solver.
+```sh
+$ python runner.py
+$ (enter text to be classified)
+$ (if text is classified as disease, it would also try to identify the disease)
+```
+## Conclusions
 
-**What should I deliver?**  
-Your code, results, and brief instructions on how to build and run your solution. 
+Model performs satisfactorily well, but with caveats. Future scope includes:
+- Experimentation with Word embeddings and Glove bag-of-words
+- Convolutional Neural Networks and Deep-NLP
 
-**What is this again?**
-This is a simulation of a project that you might execute. Our goal is that by collaborating on this repo we will both learn from experience. 
-
-**Is there an example solution?**
-
-1. Naive Bayes Classifier - https://github.com/shkr/wikiclassifier/blob/master/wikiclassifier.pdf
